@@ -2,8 +2,13 @@ package ejemplojdbc.edu.fpdual.dao;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +16,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+
 public class Country {
 
 	String id;
@@ -51,6 +56,29 @@ public class Country {
 			e.printStackTrace();
 		}
 	}
+	public Country(String code) {
+		super();
+		this.code = code;
+		
+	}
+	public Country(String code,String name) {
+		super();
+		this.code = code;
+		this.name = name;
+	}
+	@Override
+	public String toString() {
+		if(this.equals(null)) {
+		return "Country [id=" + id + ", code=" + code + ", name=" + name + ", continent=" + continent + ", region="
+				+ region + ", surfaceArea=" + surfaceArea + ", independenceYear=" + independenceYear + ", population="
+				+ population + ", lifeExpectancy=" + lifeExpectancy + ", gnp=" + gnp + ", gnpoId=" + gnpoId
+				+ ", localName=" + localName + ", govermentForm=" + govermentForm + ", headOfState=" + headOfState
+				+ ", capitalCode=" + capitalCode + "]";
+		}else {
+			return  code ;
+		}
+	}
+	
 	
 	
 }

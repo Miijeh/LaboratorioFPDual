@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,6 +12,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+
 public class City {
 
 	int id;
@@ -29,5 +31,16 @@ public class City {
 			e.printStackTrace();
 		}
 	}
+
+	public City(int id, String name, String countryCode, String district, BigDecimal population) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.country = new Country(countryCode);
+		this.district = district;
+		this.population = population;
+	}
+	
+	
 	
 }
