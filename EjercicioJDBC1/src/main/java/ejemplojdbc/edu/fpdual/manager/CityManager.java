@@ -130,7 +130,7 @@ public class CityManager {
 	}
 
 	public List<City> findByName(Connection con, String name) {
-		try (PreparedStatement prepStat = con.prepareStatement("SELECT * FROM city WHERE name like ?")) {
+		try (PreparedStatement prepStat = con.prepareStatement("SELECT * FROM city WHERE name = ?")) {
 			prepStat.setString(1, name);
 			ResultSet result = prepStat.executeQuery();
 			result.beforeFirst();

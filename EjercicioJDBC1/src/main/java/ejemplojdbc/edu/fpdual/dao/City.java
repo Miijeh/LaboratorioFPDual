@@ -33,7 +33,7 @@ public class City {
 	}
 
 	public City(int id, String name, String countryCode, String district, BigDecimal population) {
-		super();
+		
 		this.id = id;
 		this.name = name;
 		this.country = new Country(countryCode);

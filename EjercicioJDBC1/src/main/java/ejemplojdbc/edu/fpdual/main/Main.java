@@ -74,9 +74,23 @@ public class Main {
 			//new CountryManager().deleteCountry(con, sevilla);
 			
 			//Find all countries languages
-			new CountryLanguageManager().findAll(con).forEach(language->System.out.println(language));
+			//new CountryLanguageManager().findAll(con).forEach(language->System.out.println(language));
+		
+			//Find all countries by ID (Countrycode)
+			//new CountryLanguageManager().findByID(con, "ESP").forEach(country->System.out.println(country));
+		
+			//Find languages by country
+			//System.out.println(new CountryLanguageManager().findLanguageByID(con, "ESP"));
+					
+			//Update language
+			//new CountryLanguageManager().updateLanguage(con, "AFG","Balochi","Espanyol", "T", 1.3f);
 			
-		} finally {
+			//Insert language
+			//new CountryLanguageManager().insertLanguage(con, "ESP", "Sevillano", "T", 5f);
+		
+			//Delete language from countrycode and language
+			new CountryLanguageManager().deleteLanguage(con, "ESP", "Sevillano");
+			} finally {
 			try {
 				con.close();
 			} catch (SQLException e) {

@@ -13,5 +13,6 @@
 	<classpathentry kind="src" path="PRUEBAS"/>
 	<classpathentry kind="src" path="EXCEPCIONES"/>
 	<classpathentry kind="src" path="MasColecciones"/>
+	<classpathentry kind="src" path="StreamsYLambdas"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

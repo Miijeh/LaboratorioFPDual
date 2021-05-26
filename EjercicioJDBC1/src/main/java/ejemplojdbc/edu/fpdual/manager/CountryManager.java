@@ -63,7 +63,7 @@ public class CountryManager {
 
 	public List<Country> findAllCountriesByName(Connection con, String name) {
 		try (PreparedStatement prepStat = con.prepareStatement("SELECT * FROM COUNTRY WHERE upper(name) like ?")) {
-			prepStat.setString(1,"%" + name +"%");
+			prepStat.setString(1,"%" + name.toUpperCase() +"%");
 			ResultSet result = prepStat.executeQuery();
 			result.beforeFirst();
 			List<Country> countriesByName = new ArrayList<Country>();
@@ -79,7 +79,7 @@ public class CountryManager {
 	}
 	public List<Country> findAllCountriesStartingWith(Connection con, String name) {
 		try (PreparedStatement prepStat = con.prepareStatement("SELECT * FROM COUNTRY WHERE upper(name) like ?")) {
-			prepStat.setString(1,name +"%");
+			prepStat.setString(1,name.toUpperCase() +"%");
 			ResultSet result = prepStat.executeQuery();
 			result.beforeFirst();
 			List<Country> countriesStartingWith = new ArrayList<Country>();
@@ -95,7 +95,7 @@ public class CountryManager {
 	}
 	public List<Country> findAllCountriesEndingWith(Connection con, String name) {
 		try (PreparedStatement prepStat = con.prepareStatement("SELECT * FROM COUNTRY WHERE upper(name) like ?")) {
-			prepStat.setString(1, "%"+name);
+			prepStat.setString(1, "%"+name.toUpperCase());
 			ResultSet result = prepStat.executeQuery();
 			result.beforeFirst();
 			List<Country> countriesEndingWith = new ArrayList<Country>();

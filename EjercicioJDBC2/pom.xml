@@ -3,25 +3,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.fpdual.jdbc</groupId>
-	<artifactId>ejemplojdbc</artifactId>
+	<artifactId>jdbcEjer2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Ejemplo JDBC</name>
-	<description>Ejemplo didactivo para conexión por JDBC a MySQL</description>
-	<properties>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<lombokVersion>1.18.20</lombokVersion>
-	</properties>
-
+	<name>EjercicioJDBC2</name>
+	<description>SegundoEjercicioJDBC</description>
 	<dependencies>
-		<!-- Lombok dependency -->
+		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>${lombokVersion}</version>
+			<version>1.18.20</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- JUnit 5 dependency -->
+		<!-- JUnit -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
@@ -40,28 +34,24 @@
 			<version>1.5.2</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-runner</artifactId>
-			<version>1.5.2</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- Hamcrest dependency -->
+		
+		<!-- Hamcrest -->
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
 			<version>1.3</version>
+			<scope>test</scope>
 		</dependency>
-		<!-- MySQL dependency -->
+		<!-- MYSQL conector -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.11</version>
+			<version>8.0.24</version>
 		</dependency>
+
 	</dependencies>
-
-
-	<build>
+		<build>
 		<plugins>
 		<!-- JUnit 5 enabler plugins -->
 			<plugin>
@@ -74,5 +64,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
